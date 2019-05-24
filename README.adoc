@@ -195,6 +195,10 @@ sudo apt install cmake pkg-config libssl-dev git clang libclang-dev
 [source, shell]
 brew install cmake pkg-config openssl git llvm
 
+ - Nix/NixOS:
+[source, shell]
+nix-shell
+
  - Windows (PowerShell):
 +
 [source, shell]
@@ -216,6 +220,8 @@ $env:OPENSSL_STATIC = 'Yes'
 [System.Environment]::SetEnvironmentVariable('OPENSSL_DIR', $env:OPENSSL_DIR, [System.EnvironmentVariableTarget]::User)
 [System.Environment]::SetEnvironmentVariable('OPENSSL_STATIC', $env:OPENSSL_STATIC, [System.EnvironmentVariableTarget]::User)
 ----
+
+==== Shared Steps
 
 Then, grab the Substrate source code:
 
