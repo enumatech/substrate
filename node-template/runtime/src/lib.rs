@@ -33,6 +33,7 @@ pub use balances::Call as BalancesCall;
 pub use runtime_primitives::{Permill, Perbill};
 pub use timestamp::BlockPeriod;
 pub use support::{StorageValue, construct_runtime};
+use {erc20_multi};
 
 /// The type that is used for identifying authorities.
 pub type AuthorityId = <AuthoritySignature as Verify>::Signer;
@@ -189,8 +190,19 @@ impl sudo::Trait for Runtime {
 
 /// Used for the module template in `./template.rs`
 impl template::Trait for Runtime {
+	// type Amount = u128;
 	type Event = Event;
 }
+
+impl erc20_multi::Trait for Runtime {
+	type TokenBalance = u128;
+	type Event = Event;
+}
+
+// impl assets::Trait for Runtime {
+// 	type Event = Event;
+// 	type Balance = u128;
+// }
 
 construct_runtime!(
 	pub enum Runtime with Log(InternalLog: DigestItem<Hash, AuthorityId, AuthoritySignature>) where
@@ -207,6 +219,8 @@ construct_runtime!(
 		Sudo: sudo,
 		// Used for the module template in `./template.rs`
 		TemplateModule: template::{Module, Call, Storage, Event<T>},
+		Erc20: erc20_multi::{Module, Call, Storage, Event<T>},
+		// Assets: assets,
 	}
 );
 

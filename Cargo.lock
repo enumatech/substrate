@@ -2090,6 +2090,7 @@ dependencies = [
  "srml-aura 1.0.0",
  "srml-balances 1.0.0",
  "srml-consensus 1.0.0",
+ "srml-erc20-multi 0.9.0",
  "srml-executive 1.0.0",
  "srml-indices 1.0.0",
  "srml-sudo 1.0.0",
@@ -3270,6 +3271,19 @@ dependencies = [
  "sr-primitives 1.0.0",
  "sr-std 1.0.0",
  "srml-balances 1.0.0",
+ "srml-support 1.0.0",
+ "srml-system 1.0.0",
+ "substrate-primitives 1.0.0",
+]
+
+[[package]]
+name = "srml-erc20-multi"
+version = "0.9.0"
+dependencies = [
+ "parity-codec 3.5.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "sr-io 1.0.0",
+ "sr-primitives 1.0.0",
+ "sr-std 1.0.0",
  "srml-support 1.0.0",
  "srml-system 1.0.0",
  "substrate-primitives 1.0.0",
